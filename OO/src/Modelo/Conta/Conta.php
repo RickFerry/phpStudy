@@ -2,7 +2,7 @@
 
 namespace Alura\Banco\Modelo\Conta;
 
-class Conta
+abstract class Conta
 {
     private Titular $titular;
     private float $saldo;
@@ -39,6 +39,8 @@ class Conta
 
     public function sacar(float $valor)
     {
+        $tarifa = $valor * $this->getPercentual();
+        $valor += $tarifa;
         if ($valor > $this->saldo) {
             echo "Saldo insuficiente";
             return;
@@ -58,4 +60,6 @@ class Conta
     {
         return self::$totalContas;
     }
+
+    abstract function getPercentual(): float;
 }
