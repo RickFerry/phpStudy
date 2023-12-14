@@ -2,10 +2,12 @@
 
 namespace Alura\Banco\Modelo;
 
+use Alura\Banco\Service\PropertiesAccess;
 use Exception;
 
 abstract class Pessoa
 {
+    use PropertiesAccess;
     private string $nome;
     private Cpf $cpf;
 
@@ -34,7 +36,7 @@ abstract class Pessoa
     /**
      * @throws Exception
      */
-    public function validaNome(string $nome)
+    final public function validaNome(string $nome)
     {
         if (strlen($nome) < 5) {
             throw new Exception("O nome deve ter pelo menos 5 caracteres");

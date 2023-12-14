@@ -15,6 +15,8 @@ use Alura\Banco\Service\Autenticador;
 use Alura\Banco\Service\ControladorDeBonificacoes;
 
 $endereco = new Endereco('Rua 1', 'Numero 2', 'Bairro 3', 'Cidade 4');
+echo $endereco->bairro . PHP_EOL;
+echo $endereco . PHP_EOL;
 $conta = new ContaCorrente(new Titular('Fernando', new Cpf('123.456.789-00'), $endereco));
 $conta->depositar(1000);
 $conta->sacar(100);
@@ -43,3 +45,5 @@ echo $ctrl->getTotalBonificacoes();
 $security = new Autenticador();
 $security->login($diretor, '123');
 $security->login($gerente, '321');
+
+echo PHP_EOL. $dev->nome;
