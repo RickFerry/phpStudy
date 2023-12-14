@@ -4,7 +4,7 @@ namespace Alura\Banco\Modelo;
 
 use Exception;
 
-class Pessoa
+abstract class Pessoa
 {
     private string $nome;
     private Cpf $cpf;
@@ -31,6 +31,9 @@ class Pessoa
         return $this->cpf;
     }
 
+    /**
+     * @throws Exception
+     */
     public function validaNome(string $nome)
     {
         if (strlen($nome) < 5) {
