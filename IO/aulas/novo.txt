@@ -1,0 +1,3 @@
+Testando a escrita em PHP.
+Testado a maneira de escrita em PHP.
+Testando a escrita em PHP.
