@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dbf2090b-e009-46f7-b7c9-3ec4ec7a2ef3" name="Changes" comment="Strings em PHP" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\Program Files\php-8.3.0\php.exe" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2ZYHAOeMJAo9kymFftxCFNO7EhK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "PHP Script.decima.php.executor": "Run",
+    "PHP Script.decimaPrimeira.php.executor": "Run",
+    "PHP Script.decimaQuarta.php.executor": "Run",
+    "PHP Script.decimaSegunda.php.executor": "Run",
+    "PHP Script.decimaTerceira.php.executor": "Run",
+    "PHP Script.nona.php.executor": "Run",
+    "PHP Script.oitava.php.executor": "Run",
+    "PHP Script.primeira.php.executor": "Run",
+    "PHP Script.quarto.php.executor": "Run",
+    "PHP Script.quinta.php.executor": "Run",
+    "PHP Script.segunda.php.executor": "Run",
+    "PHP Script.setima.php.executor": "Run",
+    "PHP Script.sexta.php.executor": "Run",
+    "PHP Script.terceira.php.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-php-predefined-ba97393d7c68-74080bdb84d3-com.jetbrains.php.sharedIndexes-PS-233.11799.297" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dbf2090b-e009-46f7-b7c9-3ec4ec7a2ef3" name="Changes" comment="" />
+      <created>1702591948281</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702591948281</updated>
+      <workItem from="1702591949565" duration="15018000" />
+    </task>
+    <task id="LOCAL-00001" summary="Update gitignore">
+      <option name="closed" value="true" />
+      <created>1702611391019</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702611391020</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Strings em PHP">
+      <option name="closed" value="true" />
+      <created>1702611473500</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702611473500</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update gitignore" />
+    <MESSAGE value="Strings em PHP" />
+    <option name="LAST_COMMIT_MESSAGE" value="Strings em PHP" />
+  </component>
+</project>
