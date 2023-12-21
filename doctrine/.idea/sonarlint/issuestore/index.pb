@@ -2751,3 +2751,13 @@ Bvendor/doctrine/dbal/src/Driver/IBMDB2/Exception/PrepareFailed.php,b\9\b9f22e4
 composer.json,3\9\3957b91a0d8450cea0115cfd5af69eac90d75897
 =
 composer.lock,c\3\c3262e2a0879195bd6a727e90f768bc85ad79ffd
+F
+bin/insert-student.php,6\c\6c7d4bea4114f0723b770f0bcc6be27eb5c4cdb3
+E
+bin/list-students.php,8\7\87a131f483d42372ec2f56cc95f5e2866145e4ea
+F
+bin/update-student.php,1\2\12e537dcdd029e764f739b17ec2b1517fbb320de
+F
+bin/delete-student.php,4\5\457aef6cf257e32022447324eec8222642f6163a
+D
+src/Entity/Phone.php,e\b\eb1efbc4907e2af6de4f07032ef15e3423321233
