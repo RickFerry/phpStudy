@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="doctrine" uuid="df61aad7-10c3-44da-b728-dd3600e12769">
+    <data-source source="LOCAL" name="doctrine" uuid="216c70e0-5851-4650-8019-7b8b65b1aaea">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>

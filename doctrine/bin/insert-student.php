@@ -10,11 +10,10 @@ require_once '../vendor/autoload.php';
 
 try {
     $entityManager = EntityManagerCreator::getEntityManager();
-    $phone = new Phone('123456789');
-    $entityManager->persist($phone);
 
-    $student = new Student('Student with phone');
-    $student->setPhones($phone);
+    $student = new Student('Phonalberto');
+    $student->setPhones(new Phone('1123456789'));
+    $student->setPhones(new Phone('987654321'));
     $entityManager->persist($student);
 
     $entityManager->flush();

@@ -10,10 +10,10 @@ require_once '../vendor/autoload.php';
 try {
     $entityManager = EntityManagerCreator::getEntityManager();
 
-    $user = $entityManager->find(Student::class, 6);
+    $user = $entityManager->find(Student::class, 8);
     $entityManager->remove($user);
 
-    $reference = $entityManager->getReference(Student::class, 3);
+    $reference = $entityManager->getReference(Student::class, 5);
     $entityManager->remove($reference);
 
     $entityManager->flush();

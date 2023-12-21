@@ -17,7 +17,7 @@ class Student
     private int $id;
     #[Column]
     private string $name;
-    #[OneToMany(mappedBy: 'student', targetEntity: Phone::class)]
+    #[OneToMany(mappedBy: 'student', targetEntity: Phone::class, cascade: ['persist', 'remove'])]
     private Collection $phones;
 
     /**

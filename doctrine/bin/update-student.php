@@ -11,11 +11,11 @@ try {
     $entityManager = EntityManagerCreator::getEntityManager();
     $repository = $entityManager->getRepository(Student::class);
 
-    $user = $entityManager->find(Student::class, 6);
-    $user->setName('William');
+    $user = $entityManager->find(Student::class, 2);
+    $user->setName('Ricardo');
 
-    $student = $repository->find(3);
-    $student->setName('Kalel');
+    $student = $repository->find(4);
+    $student->setName('Tayne');
 
     $entityManager->flush();
 } catch (\Doctrine\DBAL\Exception|MissingMappingDriverImplementation | ORMException $e) {
