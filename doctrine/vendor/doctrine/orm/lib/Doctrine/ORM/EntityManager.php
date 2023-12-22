@@ -73,7 +73,7 @@ use function strpos;
  *
  * @final
  */
-class EntityManager implements EntityManagerInterface
+class EntityManager extends \Doctrine\DBAL\Connection implements EntityManagerInterface
 {
     /**
      * The used Configuration.
