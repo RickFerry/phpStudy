@@ -11,10 +11,21 @@ require_once '../vendor/autoload.php';
 try {
     $entityManager = EntityManagerCreator::getEntityManager();
 
-    $student = new Student('Phonalberto');
-    $student->setPhones(new Phone('1123456789'));
-    $student->setPhones(new Phone('987654321'));
-    $entityManager->persist($student);
+    $phonalberto = new Student('Phonalberto');
+    $phonalberto->setPhones(new Phone('1123456780'));
+    $phonalberto->setPhones(new Phone('987654320'));
+
+    $alberphone = new Student('Alberphone');
+    $alberphone->setPhones(new Phone('1123456781'));
+    $alberphone->setPhones(new Phone('987654321'));
+
+    $ricel = new Student('Ricel');
+    $ricel->setPhones(new Phone('1123456782'));
+    $ricel->setPhones(new Phone('987654322'));
+
+    $entityManager->persist($alberphone);
+    $entityManager->persist($phonalberto);
+    $entityManager->persist($ricel);
 
     $entityManager->flush();
 } catch (\Doctrine\DBAL\Exception|MissingMappingDriverImplementation | ORMException $e) {

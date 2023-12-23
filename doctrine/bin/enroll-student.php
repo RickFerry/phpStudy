@@ -12,9 +12,17 @@ require_once '../vendor/autoload.php';
 try {
     $entityManager = EntityManagerCreator::getEntityManager();
 
-    $student = $entityManager->find(Student::class, 1);
-    $course = $entityManager->find(Course::class, 2);
-    $student->enrollInCourse($course);
+    $stdt1 = $entityManager->find(Student::class, 1);
+    $crs1 = $entityManager->find(Course::class, 2);
+    $crs2 = $entityManager->find(Course::class, 3);
+    $stdt1->enrollInCourse($crs1);
+    $stdt1->enrollInCourse($crs2);
+
+    $stdt2 = $entityManager->find(Student::class, 2);
+    $crs3 = $entityManager->find(Course::class, 1);
+    $crs4 = $entityManager->find(Course::class, 3);
+    $stdt2->enrollInCourse($crs1);
+    $stdt2->enrollInCourse($crs2);
 
     $entityManager->flush();
 } catch (\Doctrine\DBAL\Exception|MissingMappingDriverImplementation | ORMException $e) {

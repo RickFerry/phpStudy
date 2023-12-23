@@ -2763,11 +2763,15 @@ D
 src/Entity/Phone.php,e\b\eb1efbc4907e2af6de4f07032ef15e3423321233
 >
 migrations.php,9\8\98c3275ab8c2b6b9df11d970a639192681541439
-A
-migrations-db.php,6\9\695cd5798f5aeb2dc826fa1e7a1dc8a07fe0e8d7
 >
 cli-config.php,b\0\b05a67f87fa891b7d67c44fe763e15113ab54c9a
 E
 src/Entity/Course.php,5\d\5db7a667419af01b726f3b3f8e2872904dd6fecf
 T
 $migrations/Version20231222043316.php,3\d\3d68e210ed437d08f97e98b8bba9c180546d7812
+E
+bin/insert-course.php,c\1\c10d1c4900ededc468d7db566f5d03e27a62ec19
+F
+bin/enroll-student.php,6\e\6e1a28ff291b8268823166f96059eee74003b4dd
+U
+%src/Repository/StudentRespository.php,3\1\31b315ed08593d9f3ba38f28e642bf5317b8729f

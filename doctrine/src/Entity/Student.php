@@ -10,15 +10,21 @@ use Doctrine\ORM\Mapping\GeneratedValue;
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\ManyToMany;
 use Doctrine\ORM\Mapping\OneToMany;
+use Ferry\Doctrine\Repository\StudentRespository;
 
-#[Entity]
+#[Entity(repositoryClass: StudentRespository::class)]
 class Student
 {
     #[Id, Column, GeneratedValue]
     private int $id;
     #[Column]
     private string $name;
-    #[OneToMany(mappedBy: 'student', targetEntity: Phone::class, cascade: ['persist', 'remove'])]
+    #[OneToMany(
+        mappedBy: 'student',
+        targetEntity: Phone::class,
+        cascade: ['persist', 'remove'],
+        fetch: 'EAGER'
+    )]
     private Collection $phones;
     #[ManyToMany(targetEntity: Course::class, inversedBy: 'students')]
     private Collection $courses;

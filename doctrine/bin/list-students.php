@@ -12,7 +12,7 @@ require_once '../vendor/autoload.php';
 try {
     $entityManager = EntityManagerCreator::getEntityManager();
     $repository = $entityManager->getRepository(Student::class);
-    $all = $repository->findAll();
+    $all = $repository->studentsPhonesAndCourses();
     foreach ($all as $student) {
         echo $student->getName() . PHP_EOL;
         echo implode(',',
@@ -21,13 +21,21 @@ try {
                 $student->getCourses()->map(fn(Course $course) => $course->getName())->toArray()) . PHP_EOL;
     }
 
-    $students = $repository->findBy(['name' => 'Gael']);
+    $students = $repository->findBy(['name' => 'Alberphone']);
     echo $students[0]->getName() . PHP_EOL;
 
-    $one = $repository->findOneBy(['id' => 4]);
+    $one = $repository->findOneBy(['id' => 2]);
     echo $one->getName() . PHP_EOL;
 
-    echo $repository->count([]) . PHP_EOL;
+    $dql2 = 'SELECT COUNT(student) FROM Ferry\Doctrine\Entity\Student student';
+    $dql3 = 'SELECT COUNT(student) FROM Ferry\Doctrine\Entity\Student student WHERE SIZE(student.phones) >= 2';
+    $dql4 = 'SELECT COUNT(student) FROM Ferry\Doctrine\Entity\Student student WHERE student.phones IS EMPTY';
+
+    var_dump($entityManager->createQuery($dql2)->getSingleScalarResult());
+    var_dump($entityManager->createQuery($dql3)->getSingleScalarResult());
+    var_dump($entityManager->createQuery($dql4)->getSingleScalarResult());
+
+    echo count($all) . PHP_EOL;
 
     echo $repository->find(1)->getName() . PHP_EOL;
 } catch (\Doctrine\DBAL\Exception|MissingMappingDriverImplementation|ORMException $e) {
