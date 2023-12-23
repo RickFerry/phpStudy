@@ -33,7 +33,10 @@ try {
 
     var_dump($entityManager->createQuery($dql2)->getSingleScalarResult());
     var_dump($entityManager->createQuery($dql3)->getSingleScalarResult());
-    var_dump($entityManager->createQuery($dql4)->getSingleScalarResult());
+
+    $query = $entityManager->createQuery($dql4)->enableResultCache(86400);
+    $singleScalarResult = $query->getSingleScalarResult();
+    var_dump($singleScalarResult);
 
     echo count($all) . PHP_EOL;
 
