@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/series-manager.iml" filepath="$PROJECT_DIR$/.idea/series-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/series_manager.iml" filepath="$PROJECT_DIR$/.idea/series_manager.iml" />
     </modules>
   </component>
 </project>
