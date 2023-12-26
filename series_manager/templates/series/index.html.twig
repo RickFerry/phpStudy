@@ -3,10 +3,16 @@
 {% block title %}Listagem de Series{% endblock %}
 
 {% block body %}
-    <a href="/series/create" class="btn btn-dark mb-3"> Adicionar</a>
+    <a href="{{ path('app_series_form') }}" class="btn btn-dark mb-3">Adicionar</a>
     <ul class="list-group">
         {% for serie in series %}
-            <li class="list-group-item">{{ serie.name }}</li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ serie.name }}
+                <form method="post" action="{{ path('app_series_delete', {id: serie.id}) }}">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button class="btn btn-sm btn-danger">X</button>
+                </form>
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}

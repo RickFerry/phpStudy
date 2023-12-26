@@ -3,7 +3,7 @@
 {% block title %}Nova Série{% endblock %}
 
 {% block body %}
-    <form method="post">
+    <form method="post" action={{ path('app_series_add') }}>
         <div class="mb-3">
             <label for="name" class="form-label">Nome da série:</label>
             <input class="form-control" type="text" name="name" placeholder="name" id="name">

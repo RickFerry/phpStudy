@@ -29,3 +29,16 @@ S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 O
 templates/series/form.html.twig,4\d\4debef393ea0d791086a694fe791cb6be7449e9b
+R
+"src/Repository/SerieRepository.php,b\a\ba5bad1da7fd271c960ea4ef89b71c72fd499741
+4
+.env,3\c\3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
+:
+
+.env.local,1\f\1fa30fea3e9ae270a3c38a6113a3689d8987d108
+T
+$migrations/Version20231225152844.php,3\9\390d2786f8b6bff30127eab45e686a9684ed09e9
+T
+$migrations/Version20231226013428.php,b\0\b074d5a7e87557cfb21a0fffcb08abec97818a17
+N
+config/packages/framework.yaml,d\f\df607fe73ff82c569824a7392edf5e760e998efe

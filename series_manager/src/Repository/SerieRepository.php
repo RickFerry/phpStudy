@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Serie;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Exception\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -35,6 +36,28 @@ class SerieRepository extends ServiceEntityRepository
         if ($flush){
             $this->getEntityManager()->flush();
         }
+    }
+
+    /**
+     * @throws ORMException
+     */
+    public function delete(int $id, bool $flush = false): void
+    {
+        $serie = $this->getEntityManager()->getReference(Serie::class, $id);
+        $this->getEntityManager()->remove($serie);
+        if ($flush){
+            $this->getEntityManager()->flush();
+        }
+    }
+
+    public function findOneByName(string $name): ?Serie
+    {
+        return $this->createQueryBuilder('s')
+            ->andWhere('s.name = :val')
+            ->setParameter('val', $name)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
     }
 
 //    /**
