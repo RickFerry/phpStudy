@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Serie;
 use App\Repository\SerieRepository;
 use Doctrine\ORM\Exception\ORMException;
-use phpDocumentor\Reflection\Types\This;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,14 +18,11 @@ class SeriesController extends AbstractController
     }
 
     #[Route('/series', name: 'app_series_index', methods: ['GET'])]
-    public function index(Request $request): Response
+    public function index(): Response
     {
         $series = $this->repository->findAll();
-        $msg = $request->getSession()->get('success');
-        $request->getSession()->remove('success');
         return $this->render('series/index.html.twig', [
-            'series' => $series,
-            'msg' => $msg,
+            'series' => $series
         ]);
     }
 
@@ -43,7 +39,7 @@ class SeriesController extends AbstractController
             new Serie($request->request->get('name')),
             true
         );
-        $request->getSession()->set('success', 'Série adicionada com sucesso!');
+        $this->addFlash('success', 'Série adicionada com sucesso!');
         return new RedirectResponse('/series');
     }
 
@@ -51,10 +47,10 @@ class SeriesController extends AbstractController
      * @throws ORMException
      */
     #[Route('/series/delete/{id}', name: 'app_series_delete', requirements: ['id' => '\d+'], methods: ['DELETE'])]
-    public function delete(int $id, Request $request): Response
+    public function delete(int $id): Response
     {
         $this->repository->delete($id, true);
-        $request->getSession()->set('success', 'Série removida com sucesso!');
+        $this->addFlash('success', 'Série removida com sucesso!');
         return new RedirectResponse('/series');
     }
 
@@ -69,7 +65,7 @@ class SeriesController extends AbstractController
     {
         $serie->setName($request->request->get('name'));
         $this->repository->add($serie, true);
-        $request->getSession()->set('success', 'Série atualizada com sucesso!');
+        $this->addFlash('success', 'Série atualizada com sucesso!');
         return new RedirectResponse('/series');
     }
 }
