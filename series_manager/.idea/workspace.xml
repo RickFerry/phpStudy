@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93912db9-92ac-4fdf-b297-292afdc21a17" name="Changes" comment="Ready!!!">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20231225152844.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Serie.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/SerieRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/series_manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/series_manager.iml" afterDir="false" />
+    <list default="true" id="93912db9-92ac-4fdf-b297-292afdc21a17" name="Changes" comment="Feature de cadastro de serie com Symfony, Doctrine, ...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SeriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SeriesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/series/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/series/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +179,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/rick_/OneDrive/Documentos/projects/phpStudy/series_manager",
+    "last_opened_file_path": "C:/Program Files/php-8.3.0/php.exe",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -200,6 +188,7 @@
     "npm.dev-server.executor": "Run",
     "npm.dev.executor": "Run",
     "npm.watch.executor": "Run",
+    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -268,6 +257,7 @@
       <updated>1703456264462</updated>
       <workItem from="1703456265479" duration="1321000" />
       <workItem from="1703462379336" duration="14680000" />
+      <workItem from="1703541905071" duration="176000" />
     </task>
     <task id="LOCAL-00001" summary="Ready!!!">
       <option name="closed" value="true" />
@@ -277,7 +267,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703472564497</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Feature de cadastro de serie com Symfony, Doctrine, ...">
+      <option name="closed" value="true" />
+      <created>1703528969976</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703528969976</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,6 +284,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Ready!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ready!!!" />
+    <MESSAGE value="Feature de cadastro de serie com Symfony, Doctrine, ..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature de cadastro de serie com Symfony, Doctrine, ..." />
   </component>
 </project>
