@@ -3,9 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Serie;
+use App\Form\SerieType;
 use App\Repository\SerieRepository;
 use Doctrine\ORM\Exception\ORMException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -29,16 +32,18 @@ class SeriesController extends AbstractController
     #[Route('/series/create', name: 'app_series_form', methods: ['GET'])]
     public function serieForm(): Response
     {
-        return $this->render('series/form.html.twig');
+        $form = $this->createForm(SerieType::class, new Serie(''));
+        return $this->render('series/form.html.twig', compact('form'));
     }
 
     #[Route('/series/create', name: 'app_series_add', methods: ['POST'])]
     public function addSerie(Request $request): Response
     {
-        $this->repository->add(
-            new Serie($request->request->get('name')),
-            true
-        );
+        $handleRequest = $this->createForm(SerieType::class, new Serie(''))->handleRequest($request);
+        if (!$handleRequest->isValid()) {
+            return $this->render('series/form.html.twig', compact('handleRequest'));
+        }
+        $this->repository->add($handleRequest->getData(), true);
         $this->addFlash('success', 'Série adicionada com sucesso!');
         return new RedirectResponse('/series');
     }
@@ -57,13 +62,17 @@ class SeriesController extends AbstractController
     #[Route('/series/edit/{serie}', name: 'app_series_edit', methods: ['GET'])]
     public function edit(Serie $serie): Response
     {
-        return $this->render('series/form.html.twig', compact('serie'));
+        $form = $this->createForm(SerieType::class, $serie, ['is_edit' => true]);
+        return $this->render('series/form.html.twig', compact('form', 'serie'));
     }
 
     #[Route('/series/edit/{serie}', name: 'app_series_update', methods: ['PATCH'])]
     public function update(Serie $serie, Request $request): Response
     {
-        $serie->setName($request->request->get('name'));
+        $form = $this->createForm(SerieType::class, $serie, ['is_edit' => true])->handleRequest($request);
+        if (!$form->isValid()) {
+            return $this->render('series/form.html.twig', compact('form', 'serie'));
+        }
         $this->repository->add($serie, true);
         $this->addFlash('success', 'Série atualizada com sucesso!');
         return new RedirectResponse('/series');

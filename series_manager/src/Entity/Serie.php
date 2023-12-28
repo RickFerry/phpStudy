@@ -4,16 +4,19 @@ namespace App\Entity;
 
 use App\Repository\SerieRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: SerieRepository::class)]
 class Serie
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[ORM\GeneratedValue]
     private ?int $id ;
 
     #[ORM\Column]
+    #[Assert\NotBlank]
+    #[Assert\Length(min: 3, max: 50)]
     private string $name;
 
     /**

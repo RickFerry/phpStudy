@@ -42,3 +42,9 @@ T
 $migrations/Version20231226013428.php,b\0\b074d5a7e87557cfb21a0fffcb08abec97818a17
 N
 config/packages/framework.yaml,d\f\df607fe73ff82c569824a7392edf5e760e998efe
+I
+config/packages/twig.yaml,8\a\8a5c55d47e428b829ef7645f00a0b768cef8a5bf
+F
+src/Form/SerieType.php,c\3\c30e9980433eeb14f1e865afc1c99a313cf86499
+D
+src/Entity/Serie.php,6\f\6f074abe06cf75a1cd187d4bfb9949e790f4963b
