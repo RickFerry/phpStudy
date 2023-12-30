@@ -87,9 +87,9 @@ class SeriesController extends AbstractController
     private function getSerie(SerieCreateFormInput $input): Serie
     {
         $serie = new Serie($input->serieName);
-        for ($i = 1; $i < $input->seasonsQuantity; $i++) {
+        for ($i = 1; $i <= $input->seasonsQuantity; $i++) {
             $season = new Season($i);
-            for ($j = 1; $j < $input->episodesPerSeason; $j++) {
+            for ($j = 1; $j <= $input->episodesPerSeason; $j++) {
                 $season->addEpisode(new Episode($j));
             }
             $serie->addSeason($season);
