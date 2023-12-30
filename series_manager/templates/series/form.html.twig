@@ -4,7 +4,9 @@
 
 {% block body %}
     {{ form_start(form) }}
-    {{ form_row(form.name) }}
+    {{ form_row(form.serieName) }}
+    {{ form_row(form.seasonsQuantity) }}
+    {{ form_row(form.episodesPerSeason) }}
     {{ form_widget(form.save, {'attr': {'class': 'btn-dark'}}) }}
     {{ form_end(form) }}
 {% endblock %}

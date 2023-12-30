@@ -21,6 +21,14 @@ class Episode
     #[ORM\JoinColumn(nullable: false)]
     private Season $season;
 
+    /**
+     * @param int $number
+     */
+    public function __construct(int $number)
+    {
+        $this->number = $number;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

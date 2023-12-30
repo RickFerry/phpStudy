@@ -21,7 +21,7 @@ class Serie
     #[Assert\Length(min: 3, max: 50)]
     private string $name;
 
-    #[ORM\OneToMany(mappedBy: 'serie', targetEntity: Season::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'serie', targetEntity: Season::class, cascade: ['persist'], orphanRemoval: true)]
     private Collection $seasons;
 
     /**

@@ -2,13 +2,14 @@
 
 namespace App\Controller;
 
+use App\DTO\SerieCreateFormInput;
+use App\Entity\Episode;
+use App\Entity\Season;
 use App\Entity\Serie;
 use App\Form\SerieType;
 use App\Repository\SerieRepository;
 use Doctrine\ORM\Exception\ORMException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -32,18 +33,19 @@ class SeriesController extends AbstractController
     #[Route('/series/create', name: 'app_series_form', methods: ['GET'])]
     public function serieForm(): Response
     {
-        $form = $this->createForm(SerieType::class, new Serie(''));
+        $form = $this->createForm(SerieType::class, new SerieCreateFormInput());
         return $this->render('series/form.html.twig', compact('form'));
     }
 
     #[Route('/series/create', name: 'app_series_add', methods: ['POST'])]
     public function addSerie(Request $request): Response
     {
-        $handleRequest = $this->createForm(SerieType::class, new Serie(''))->handleRequest($request);
+        $input = new SerieCreateFormInput();
+        $handleRequest = $this->createForm(SerieType::class, $input)->handleRequest($request);
         if (!$handleRequest->isValid()) {
             return $this->render('series/form.html.twig', compact('handleRequest'));
         }
-        $this->repository->add($handleRequest->getData(), true);
+        $this->repository->add($this->getSerie($input), true);
         $this->addFlash('success', 'Série adicionada com sucesso!');
         return new RedirectResponse('/series');
     }
@@ -76,5 +78,22 @@ class SeriesController extends AbstractController
         $this->repository->add($serie, true);
         $this->addFlash('success', 'Série atualizada com sucesso!');
         return new RedirectResponse('/series');
+    }
+
+    /**
+     * @param SerieCreateFormInput $input
+     * @return Serie
+     */
+    private function getSerie(SerieCreateFormInput $input): Serie
+    {
+        $serie = new Serie($input->serieName);
+        for ($i = 1; $i < $input->seasonsQuantity; $i++) {
+            $season = new Season($i);
+            for ($j = 1; $j < $input->episodesPerSeason; $j++) {
+                $season->addEpisode(new Episode($j));
+            }
+            $serie->addSeason($season);
+        }
+        return $serie;
     }
 }
