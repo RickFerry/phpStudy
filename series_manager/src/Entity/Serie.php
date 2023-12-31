@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
+#[ORM\Cache]
 #[ORM\Entity(repositoryClass: SerieRepository::class)]
 class Serie
 {
@@ -21,6 +22,7 @@ class Serie
     #[Assert\Length(min: 3, max: 50)]
     private string $name;
 
+    #[ORM\Cache]
     #[ORM\OneToMany(mappedBy: 'serie', targetEntity: Season::class, cascade: ['persist'], orphanRemoval: true)]
     private Collection $seasons;
 

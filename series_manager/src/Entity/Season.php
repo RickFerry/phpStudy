@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+#[ORM\Cache]
 #[ORM\Entity(repositoryClass: SeasonRepository::class)]
 class Season
 {
@@ -19,6 +20,7 @@ class Season
     #[ORM\Column(type: Types::SMALLINT)]
     private int $number;
 
+    #[ORM\Cache]
     #[ORM\OneToMany(mappedBy: 'season', targetEntity: Episode::class, cascade: ['persist'], orphanRemoval: true)]
     private Collection $episodes;
 

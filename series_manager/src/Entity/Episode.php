@@ -6,6 +6,7 @@ use App\Repository\EpisodeRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+#[ORM\Cache]
 #[ORM\Entity(repositoryClass: EpisodeRepository::class)]
 class Episode
 {
