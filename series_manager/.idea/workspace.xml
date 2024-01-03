@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93912db9-92ac-4fdf-b297-292afdc21a17" name="Changes" comment="Adjusting">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SeasonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SeasonController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Episode.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Episode.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Season.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Season.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Serie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Serie.php" afterDir="false" />
-    </list>
+    <list default="true" id="93912db9-92ac-4fdf-b297-292afdc21a17" name="Changes" comment="Handle cache at SeasonController and secund level cache config" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -264,7 +257,7 @@
       <workItem from="1703462379336" duration="14680000" />
       <workItem from="1703541905071" duration="176000" />
       <workItem from="1703947271018" duration="14609000" />
-      <workItem from="1704030198489" duration="4499000" />
+      <workItem from="1704030198489" duration="5114000" />
     </task>
     <task id="LOCAL-00001" summary="Ready!!!">
       <option name="closed" value="true" />
@@ -306,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703966215624</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Handle cache at SeasonController and secund level cache config">
+      <option name="closed" value="true" />
+      <created>1704035827136</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1704035827136</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,6 +320,7 @@
     <MESSAGE value="Create entitys season and episode, and relationships" />
     <MESSAGE value="Seasons, episodes, feature to list seasons and episodes amount" />
     <MESSAGE value="Adjusting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjusting" />
+    <MESSAGE value="Handle cache at SeasonController and secund level cache config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Handle cache at SeasonController and secund level cache config" />
   </component>
 </project>

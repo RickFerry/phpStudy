@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Episode;
+use App\Entity\Serie;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -19,6 +20,11 @@ class EpisodeRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Episode::class);
+    }
+
+    public function flush(): void
+    {
+        $this->getEntityManager()->flush();
     }
 
 //    /**
