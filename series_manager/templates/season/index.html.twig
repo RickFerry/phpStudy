@@ -9,7 +9,9 @@
                 <a href="{{ path('app_episode', {season: season.id}) }}">
                     Temporada: {{ season.number }}
                 </a>
-                <span class="badge bg-secondary">{{ season.episodes | length }}</span>
+                <span class="badge bg-secondary">
+                    {{ season.Watcheds | length }}/{{ season.episodes | length }}
+                </span>
             </li>
         {% endfor %}
     </ul>
