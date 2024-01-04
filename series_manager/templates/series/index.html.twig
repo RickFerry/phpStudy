@@ -3,20 +3,30 @@
 {% block title %}Listagem de Series{% endblock %}
 
 {% block body %}
-    <a href="{{ path('app_series_form') }}" class="btn btn-dark mb-3">Adicionar</a>
+    {% if is_granted('ROLE_USER') %}
+        <a href="{{ path('app_series_form') }}" class="btn btn-dark mb-3">Adicionar</a>
+    {% endif %}
     <ul class="list-group">
         {% for serie in series %}
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href="{{ path('app_season', {serie: serie.id}) }}">
-                    {{ serie.name }}
-                </a>
-                <div class="d-flex">
-                    <a href="{{ path('app_series_edit', {serie: serie.id}) }}" class="btn btn-sm btn-primary me-2">E</a>
-                    <form method="post" action="{{ path('app_series_delete', {id: serie.id}) }}">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button class="btn btn-sm btn-danger">X</button>
-                    </form>
-                </div>
+                {% if is_granted('ROLE_USER') %}
+                    <a href="{{ path('app_season', {serie: serie.id}) }}">
+                {% endif %}
+                {{ serie.name }}
+                {% if is_granted('ROLE_USER') %}</a>{% endif %}
+                {% if is_granted('ROLE_USER') %}
+                    <div class="d-flex">
+                        <a
+                          href="{{ path('app_series_edit', {serie: serie.id}) }}"
+                          class="btn btn-sm btn-primary me-2">
+                            E
+                        </a>
+                        <form method="post" action="{{ path('app_series_delete', {id: serie.id}) }}">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-sm btn-danger">X</button>
+                        </form>
+                    </div>
+                {% endif %}
             </li>
         {% endfor %}
     </ul>

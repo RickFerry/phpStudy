@@ -1,8 +1,4 @@
 
-R
-"src/Controller/SerieController.php,e\c\eca083ddd43db3a4283633f166186e469c433a82
-O
-templates/serie/index.html.twig,8\e\8e4d2fdf4faebf7f60c41459763a43fecb73b15a
 H
 templates/base.html.twig,f\f\ffb3f1cfd73fdec1f0c80c63d0b5bbc1fff22022
 A
@@ -15,12 +11,8 @@ S
 #src/Controller/SeriesController.php,3\8\386d67ecdf467cd7265fffaaa752d07fa2219a7c
 P
  templates/series/index.html.twig,f\7\f7e081849f5739ea2626d4cd63c65bcad43fcc8f
-w
-G.idea/sonarlint/issuestore/e/c/eca083ddd43db3a4283633f166186e469c433a82,3\6\36a58844db7cdb7134c523924911c7f6431967c6
 ]
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
-Å
-Q.idea/sonarlint/securityhotspotstore/e/c/eca083ddd43db3a4283633f166186e469c433a82,a\0\a011e9fafc2cc4810d55baa002b0c1f7831fa17c
 =
 composer.lock,c\3\c3262e2a0879195bd6a727e90f768bc85ad79ffd
 A
@@ -38,8 +30,6 @@ R
 .env.local,1\f\1fa30fea3e9ae270a3c38a6113a3689d8987d108
 T
 $migrations/Version20231225152844.php,3\9\390d2786f8b6bff30127eab45e686a9684ed09e9
-T
-$migrations/Version20231226013428.php,b\0\b074d5a7e87557cfb21a0fffcb08abec97818a17
 N
 config/packages/framework.yaml,d\f\df607fe73ff82c569824a7392edf5e760e998efe
 I
@@ -48,3 +38,7 @@ F
 src/Form/SerieType.php,c\3\c30e9980433eeb14f1e865afc1c99a313cf86499
 D
 src/Entity/Serie.php,6\f\6f074abe06cf75a1cd187d4bfb9949e790f4963b
+M
+config/packages/security.yaml,c\5\c5f941b4d4e9404f23935164fabdd261abb68e93
+B
+config/routes.yaml,b\a\baef02989dedf0ec859f7bce087a69f29bef2b72
