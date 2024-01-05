@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93912db9-92ac-4fdf-b297-292afdc21a17" name="Changes" comment="Authentication and formLogin" />
+    <list default="true" id="93912db9-92ac-4fdf-b297-292afdc21a17" name="Changes" comment="Feature episode watched, checked/unchecked" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -156,7 +156,6 @@
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/vendor/twig/extra-bundle" />
       <path value="$PROJECT_DIR$/vendor/cr/hashcli" />
-      <path value="$PROJECT_DIR$/vendor/symfonycasts/verify-email-bundle" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -260,7 +259,6 @@
       <workItem from="1703947271018" duration="14609000" />
       <workItem from="1704030198489" duration="5114000" />
       <workItem from="1704291320655" duration="6938000" />
-      <workItem from="1704308428645" duration="4975000" />
     </task>
     <task id="LOCAL-00001" summary="Ready!!!">
       <option name="closed" value="true" />
@@ -318,15 +316,7 @@
       <option name="project" value="LOCAL" />
       <updated>1704299016637</updated>
     </task>
-    <task id="LOCAL-00008" summary="Authentication and formLogin">
-      <option name="closed" value="true" />
-      <created>1704313633256</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1704313633256</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +331,6 @@
     <MESSAGE value="Adjusting" />
     <MESSAGE value="Handle cache at SeasonController and secund level cache config" />
     <MESSAGE value="Feature episode watched, checked/unchecked" />
-    <MESSAGE value="Authentication and formLogin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Authentication and formLogin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature episode watched, checked/unchecked" />
   </component>
 </project>
