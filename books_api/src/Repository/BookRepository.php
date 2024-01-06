@@ -29,6 +29,19 @@ class BookRepository extends ServiceEntityRepository
         }
     }
 
+    public function flush(): void
+    {
+        $this->getEntityManager()->flush();
+    }
+
+    public function delete(Book $entity, bool $flush = false): void
+    {
+        $this->getEntityManager()->remove($entity);
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
+
 //    /**
 //     * @return Book[] Returns an array of Book objects
 //     */
@@ -41,8 +54,8 @@ class BookRepository extends ServiceEntityRepository
 //            ->setMaxResults(10)
 //            ->getQuery()
 //            ->getResult()
-//        ;
 
+//        ;
 //    }
 //    public function findOneBySomeField($value): ?Book
 //    {

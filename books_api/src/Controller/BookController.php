@@ -8,7 +8,7 @@ use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 class BookController extends AbstractController
 {
@@ -28,7 +28,9 @@ class BookController extends AbstractController
     public function findOne(int $id): JsonResponse
     {
         $book = $this->bookRepository->find($id);
-        if (!$book) throw $this->createNotFoundException('Book not found');
+        if (!$book) {
+            throw $this->createNotFoundException('Book not found');
+        }
 
         return $this->json([
             'data' => $book,
@@ -44,7 +46,7 @@ class BookController extends AbstractController
         $data = $request->toArray();
 
         $book = new Book();
-        $book->setTitulo($data['title']);
+        $book->setTitle($data['title']);
         $book->setIsbn($data['isbn']);
         $book->setCreatedAt(new \DateTimeImmutable('now', new \DateTimeZone('America/Sao_Paulo')));
         $book->setUpdatedAt(new \DateTimeImmutable('now', new \DateTimeZone('America/Sao_Paulo')));
@@ -53,5 +55,38 @@ class BookController extends AbstractController
         return $this->json([
             'message' => 'Success!',
         ], 201);
+    }
+
+    /**
+     * @throws Exception
+     */
+    #[Route('/books/{id}', name: 'update_book', methods: ['PUT'])]
+    public function update(int $id, Request $request): JsonResponse
+    {
+        $data = $request->toArray();
+        $book = $this->bookRepository->find($id);
+        if (!$book) {
+            throw $this->createNotFoundException('Book not found');
+        }
+        $book->setTitle($data['title']);
+        $book->setIsbn($data['isbn']);
+        $book->setUpdatedAt(new \DateTimeImmutable('now', new \DateTimeZone('America/Sao_Paulo')));
+
+        $this->bookRepository->flush();
+        return $this->json([
+            'data' => $book,
+        ]);
+    }
+
+    #[Route('/books/{id}', name: 'delete_book', methods: ['DELETE'])]
+    public function delete(int $id): JsonResponse
+    {
+        $book = $this->bookRepository->find($id);
+        if (!$book) {
+            throw $this->createNotFoundException('Book not found');
+        }
+        $this->bookRepository->delete($book, true);
+
+        return $this->json([], 204);
     }
 }
