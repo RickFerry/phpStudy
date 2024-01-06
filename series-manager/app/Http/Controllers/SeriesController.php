@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Application;
 
 class SeriesController extends Controller
 {
-    public function index() : string
+    public function index(): string
     {
         $series = [
             'Grey\'s Anatomy',
@@ -15,5 +17,10 @@ class SeriesController extends Controller
         ];
 
         return view('series.index')->with('series', $series);
+    }
+
+    public function create(): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
+    {
+        return view('series.create');
     }
 }
