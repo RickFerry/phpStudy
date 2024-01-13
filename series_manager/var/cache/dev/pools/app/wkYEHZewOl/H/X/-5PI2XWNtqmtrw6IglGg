@@ -1,0 +1,3 @@
+1704296216
+DC2_REGION_app_entity_serie_4167e14c3171dd395a86fcdcfabc0b688c36877c
+O:34:"Doctrine\ORM\Cache\QueryCacheEntry":2:{s:6:"result";a:1:{i:0;a:2:{s:10:"identifier";a:1:{s:2:"id";i:32;}s:12:"associations";a:0:{}}}s:4:"time";d:1704292616.143463;}

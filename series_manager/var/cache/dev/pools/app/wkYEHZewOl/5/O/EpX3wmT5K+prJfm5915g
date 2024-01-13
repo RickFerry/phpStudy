@@ -1,0 +1,3 @@
+1704296191
+DC2_REGION_app_entity_season_app.entity.season_80
+O:35:"Doctrine\ORM\Cache\EntityCacheEntry":2:{s:4:"data";a:3:{s:2:"id";i:80;s:6:"number";i:15;s:8:"serie_id";i:32;}s:5:"class";s:17:"App\Entity\Season";}
