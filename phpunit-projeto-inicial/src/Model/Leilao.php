@@ -5,9 +5,9 @@ namespace Alura\Leilao\Model;
 class Leilao
 {
     /** @var Lance[] */
-    private $lances;
+    private array $lances;
     /** @var string */
-    private $descricao;
+    private string $descricao;
 
     public function __construct(string $descricao)
     {
@@ -17,6 +17,9 @@ class Leilao
 
     public function recebeLance(Lance $lance)
     {
+        if (!empty($this->lances) && $this->getLanceRepetido($lance)) {
+            return;
+        }
         $this->lances[] = $lance;
     }
 
@@ -26,5 +29,11 @@ class Leilao
     public function getLances(): array
     {
         return $this->lances;
+    }
+
+    private function getLanceRepetido(Lance $lance): bool
+    {
+        $ultimoLance = $this->getLances()[count($this->getLances()) - 1];
+        return $lance->getUsuario() == $ultimoLance->getUsuario();
     }
 }
