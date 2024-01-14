@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Series;
 use Illuminate\Routing\Redirector;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\View\Factory;
