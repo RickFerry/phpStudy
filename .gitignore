@@ -1,4 +1,11 @@
 projeto-mocks-php/vendor/
+series_manager/vendor/
+series-manager/vendor/
+books_api/vendor/
+books_api/var/
+doctrine/vendor/
+doctrine/var/
+phpunit-projeto-inicial/vendor/
 
 ###> symfony/framework-bundle ###
 /.env.local
