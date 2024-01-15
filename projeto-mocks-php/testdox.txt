@@ -1,0 +1,3 @@
+Encerrador (Alura\Leilao\Tests\Service\Encerrador)
+ [x] Leiloes com mais de uma semana devem ser encerrados
+
