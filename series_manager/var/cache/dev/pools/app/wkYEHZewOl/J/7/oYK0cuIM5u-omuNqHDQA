@@ -1,3 +1,0 @@
-1704296191
-DC2_REGION_app_entity_episode_app.entity.episode_1213
-O:35:"Doctrine\ORM\Cache\EntityCacheEntry":2:{s:4:"data";a:3:{s:2:"id";i:1213;s:6:"number";i:9;s:9:"season_id";i:83;}s:5:"class";s:18:"App\Entity\Episode";}

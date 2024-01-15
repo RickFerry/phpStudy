@@ -1,3 +1,0 @@
-1704296185
-DC2_REGION_app_entity_serie_app.entity.serie_32
-O:35:"Doctrine\ORM\Cache\EntityCacheEntry":2:{s:4:"data";a:2:{s:2:"id";i:32;s:4:"name";s:13:"Greys Anatomy";}s:5:"class";s:16:"App\Entity\Serie";}
