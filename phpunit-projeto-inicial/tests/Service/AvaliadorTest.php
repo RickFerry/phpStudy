@@ -2,11 +2,12 @@
 
 namespace Service;
 
+use DomainException;
 use Alura\Leilao\Model\Lance;
 use Alura\Leilao\Model\Leilao;
 use Alura\Leilao\Model\Usuario;
-use Alura\Leilao\Service\Avaliador;
 use PHPUnit\Framework\TestCase;
+use Alura\Leilao\Service\Avaliador;
 
 class AvaliadorTest extends TestCase
 {
@@ -57,6 +58,28 @@ class AvaliadorTest extends TestCase
         self::assertEquals(6000, $maioresLances[0]->getValor());
         self::assertEquals(5000, $maioresLances[1]->getValor());
         self::assertEquals(4000, $maioresLances[2]->getValor());
+    }
+
+    public function testLeilaoVazioNaoPodeSerAvaliado()
+    {
+        self::expectException(\DomainException::class);
+        self::expectExceptionMessage('Não é possível avaliar leilão vazio');
+
+        $leilao = new Leilao('Fiat 147 0km');
+        $this->avaliador->avalia($leilao);
+
+    }
+
+    public function testLeilaoFinalizadoNaoPodeSerAvaliado()
+    {
+        self::expectException(\DomainException::class);
+        self::expectExceptionMessage('Leilão já finalizado');
+        
+        $leilao = new Leilao('Fiat 147 0km');
+        $leilao->recebeLance(new Lance(new Usuario('João'), 2000));
+        $leilao->finaliza();
+        
+        $this->avaliador->avalia($leilao);
     }
 
     public static function leilaoEmOrdemCrescente(): array
