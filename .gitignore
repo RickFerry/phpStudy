@@ -7,6 +7,14 @@ doctrine/vendor/
 doctrine/var/
 phpunit-projeto-inicial/vendor/
 
+.idea
+projeto-mocks-php/.idea/
+series_manager/.idea/
+series-manager/.idea/
+books_api/.idea/
+doctrine/.idea/
+phpunit-projeto-inicial/.idea/
+
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
