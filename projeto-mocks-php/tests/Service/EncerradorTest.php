@@ -5,54 +5,59 @@ namespace Alura\Leilao\Tests\Service;
 use Alura\Leilao\Dao\Leilao as LeilaoDao;
 use Alura\Leilao\Model\Leilao;
 use Alura\Leilao\Service\Encerrador;
+use Alura\Leilao\Service\EnviadorEmail;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-
-class LeilaoDaoMock extends LeilaoDao
-{
-    private $leiloes = [];
-
-    public function salva(Leilao $leilao): void
-    {
-        $this->leiloes[] = $leilao;
-    }
-
-    public function recuperarNaoFinalizados(): array
-    {
-        return array_filter($this->leiloes, function (Leilao $leilao) {
-            return !$leilao->estaFinalizado();
-        });
-    }
-
-    public function recuperarFinalizados(): array
-    {
-        return array_filter($this->leiloes, function (Leilao $leilao) {
-            return $leilao->estaFinalizado();
-        });
-    }
-
-    public function atualiza(Leilao $leilao): void
-    {
-    }
-}
 
 class EncerradorTest extends TestCase
 {
+    private $leiloeiro;
+    /** @var MockObject */
+    private $enviadorEmail;
+    private $brasilia;
+    private $fusca;
+
+    protected function setUp(): void
+    {
+        $this->brasilia = new Leilao('Brasília Amarela', new \DateTimeImmutable('8 days ago'));
+        $this->fusca = new Leilao('fusca 1972', new \DateTimeImmutable('10 days ago'));
+    
+        $leilaoDao = $this->createMock(LeilaoDao::class);
+        $leilaoDao->method('recuperarNaoFinalizados')->willReturn([$this->brasilia, $this->fusca]);
+        $leilaoDao->method('recuperarFinalizados')->willReturn([$this->brasilia, $this->fusca]);
+        $leilaoDao->expects($this->exactly(2))->method('atualiza')->withConsecutive([$this->brasilia], [$this->fusca]);
+    
+        $this->enviadorEmail = $this->createMock(EnviadorEmail::class);
+        $this->leiloeiro = new Encerrador($leilaoDao, $this->enviadorEmail);
+    }
+
     public function testLeiloesComMaisDeUmaSemanaDevemSerEncerrados()
     {
-        $brasilia = new Leilao('Brasília Amarela', new \DateTimeImmutable('8 days ago'));
-        $fusca = new Leilao('Fusca 1972', new \DateTimeImmutable('10 days ago'));
+        $this->leiloeiro->encerra();
 
-        $leilaoDao = new LeilaoDaoMock();
-        $leilaoDao->salva($brasilia);
-        $leilaoDao->salva($fusca);
+        $leiloes = [$this->brasilia, $this->fusca];
 
-        $leiloeiro = new Encerrador($leilaoDao);
-        $leiloeiro->encerra();
-
-        $leiloes = $leilaoDao->recuperarFinalizados();
-
+        self::assertTrue($leiloes[0]->estaFinalizado());
+        self::assertTrue($leiloes[1]->estaFinalizado());
         static::assertCount(2, $leiloes);
-        static::assertEquals('Brasília Amarela', $leiloes[0]->recuperarDescricao());
-        static::assertEquals('Fusca 1972', $leiloes[1]->recuperarDescricao());
+    }
+
+    public function testDeveContinuarProcessamentoMesmoAoEencontrarErroAoEnviarEmail()
+    {
+        $this->enviadorEmail->
+            expects($this->exactly(2))->
+            method('notificarTerminoLeilao')->
+            willThrowException(new \DomainException('Erro ao enviar e-mail'));
+        $this->leiloeiro->encerra();
+    }
+
+    public function testSoDeveEnviarLeilaoPorEmailAposFinalizado()
+    {
+        $this->enviadorEmail->expects($this->exactly(2))->method('notificarTerminoLeilao')->willReturnCallback(
+            function (Leilao $leilao) {
+                static::assertTrue($leilao->estaFinalizado());
+            }
+        );
+        $this->leiloeiro->encerra();
     }
 }
