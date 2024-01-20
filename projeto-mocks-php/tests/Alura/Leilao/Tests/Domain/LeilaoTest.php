@@ -12,8 +12,8 @@ class LeilaoTest extends TestCase
 {
     public function testProporLanceEmLeilaoFinalizadoDeveLancarExcecao()
     {
-        $this->expectException(DomainException::class);
-        $this->expectExceptionMessage('Este leilão já está finalizado');
+        self::expectException(DomainException::class);
+        self::expectExceptionMessage('Este leilão já está finalizado');
 
         $leilao = new Leilao('Fiat 147 0KM');
         $leilao->finaliza();
