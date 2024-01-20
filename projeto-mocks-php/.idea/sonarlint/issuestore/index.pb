@@ -1,10 +1,4 @@
 
-P
- tests/Service/EncerradorTest.php,8\5\853d10a928ed170410aa603dc38d843b40c584bc
-K
-tests/Domain/LeilaoTest.php,3\3\3310e6d53d048d7258d6a0ba294947bf244ee7d5
-O
-tests/Service/AvaliadorTest.php,5\b\5b2aa8076ce0e3a6a7619fe2aae39aba5c6ce4ce
 B
 src/Dao/Leilao.php,0\0\005f566c6f239cab6013bd233dd77a48a7f97598
 O
@@ -21,3 +15,13 @@ c
 3tests/Alura/Leilao/Tests/Service/EncerradorTest.php,7\6\761ffcc0cdf4a48b13bede52663515e53b5f80a2
 b
 2tests/Alura/Leilao/Tests/Service/AvaliadorTest.php,3\5\351fbc1f4f0fb5f60e410bea8f38ed2a8c139e9c
+=
+composer.json,3\9\3957b91a0d8450cea0115cfd5af69eac90d75897
+M
+src/Service/EnviadorEmail.php,4\3\43cfbb35caf1151327f6b1c53dd8a58b8bfe5d2f
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
+;
+testdox.txt,5\6\563a95b64ef76d2fb137df91b522e267a3200098

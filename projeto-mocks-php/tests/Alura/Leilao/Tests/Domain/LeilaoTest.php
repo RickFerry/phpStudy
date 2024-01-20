@@ -33,7 +33,7 @@ class LeilaoTest extends TestCase
             $leilao->recebeLance($lance);
         }
 
-        static::assertCount($qtdEsperado, $leilao->getLances());
+        self::assertCount($qtdEsperado, $leilao->getLances());
     }
 
     public function testMesmoUsuarioNaoPodeProporDoisLancesSeguidos()
@@ -48,7 +48,7 @@ class LeilaoTest extends TestCase
         $leilao->recebeLance(new Lance($usuario, 1100));
     }
 
-    public function dadosParaProporLances()
+    public function dadosParaProporLances(): array
     {
         $usuario1 = new Usuario('Usuário 1');
         $usuario2 = new Usuario('Usuário 2');

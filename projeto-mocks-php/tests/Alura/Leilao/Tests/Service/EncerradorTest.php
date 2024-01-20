@@ -12,8 +12,10 @@ use PHPUnit\Framework\TestCase;
 class EncerradorTest extends TestCase
 {
     private $leiloeiro;
-    /** @var MockObject */
+
+    /** @var MockObject&EnviadorEmail */
     private $enviadorEmail;
+
     private $brasilia;
     private $fusca;
 
@@ -39,10 +41,10 @@ class EncerradorTest extends TestCase
 
         self::assertTrue($leiloes[0]->estaFinalizado());
         self::assertTrue($leiloes[1]->estaFinalizado());
-        static::assertCount(2, $leiloes);
+        self::assertCount(2, $leiloes);
     }
 
-    public function testDeveContinuarProcessamentoMesmoAoEencontrarErroAoEnviarEmail()
+    public function testDeveContinuarProcessamentoMesmoEncontrandoErroAoEnviarEmail()
     {
         $this->enviadorEmail->
             expects($this->exactly(2))->
@@ -53,11 +55,12 @@ class EncerradorTest extends TestCase
 
     public function testSoDeveEnviarLeilaoPorEmailAposFinalizado()
     {
-        $this->enviadorEmail->expects($this->exactly(2))->method('notificarTerminoLeilao')->willReturnCallback(
-            function (Leilao $leilao) {
-                static::assertTrue($leilao->estaFinalizado());
-            }
-        );
+        $this->enviadorEmail
+            ->expects($this->exactly(2))
+            ->method('notificarTerminoLeilao')
+            ->willReturnCallback(function (Leilao $leilao) {
+                self::assertTrue($leilao->estaFinalizado());
+            });
         $this->leiloeiro->encerra();
     }
 }
