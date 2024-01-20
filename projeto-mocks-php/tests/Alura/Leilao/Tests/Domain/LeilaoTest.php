@@ -5,6 +5,7 @@ namespace Alura\Leilao\Tests\Domain;
 use Alura\Leilao\Model\Lance;
 use Alura\Leilao\Model\Leilao;
 use Alura\Leilao\Model\Usuario;
+use DateTimeImmutable;
 use DomainException;
 use PHPUnit\Framework\TestCase;
 
@@ -56,5 +57,22 @@ class LeilaoTest extends TestCase
             [1, [new Lance($usuario1, 1000)]],
             [2, [new Lance($usuario1, 1000), new Lance($usuario2, 2000)]],
         ];
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function testAtualizaLeilao()
+    {
+        $leilao = new Leilao('Brinquedo', new DateTimeImmutable('today'), 1);
+        $leilaoDao = new \Alura\Leilao\Dao\Leilao();
+
+        $leilaoDao->salva($leilao);
+        $leilao->finaliza();
+        $leilaoDao->atualiza($leilao);
+        $savedLeilao = $leilaoDao->recuperarFinalizados()[0];
+
+        $this->assertSame('Brinquedo', $savedLeilao->recuperarDescricao());
+        $this->assertTrue($savedLeilao->estaFinalizado());
     }
 }
