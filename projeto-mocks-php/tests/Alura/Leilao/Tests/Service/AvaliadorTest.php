@@ -27,7 +27,7 @@ class AvaliadorTest extends TestCase
     {
         $this->avaliador->avalia($leilao);
 
-        static::assertEquals(2000, $this->avaliador->getMaiorValor());
+        self::assertEquals(2000, $this->avaliador->getMaiorValor());
     }
 
     /**
@@ -39,7 +39,7 @@ class AvaliadorTest extends TestCase
     {
         $this->avaliador->avalia($leilao);
 
-        static::assertEquals(1000, $this->avaliador->getMenorValor());
+        self::assertEquals(1000, $this->avaliador->getMenorValor());
     }
 
     /**
@@ -53,10 +53,10 @@ class AvaliadorTest extends TestCase
 
         $lances = $this->avaliador->getTresMaioresLances();
 
-        static::assertCount(3, $lances);
-        static::assertEquals(2000, $lances[0]->getValor());
-        static::assertEquals(1500, $lances[1]->getValor());
-        static::assertEquals(1000, $lances[2]->getValor());
+        self::assertCount(3, $lances);
+        self::assertEquals(2000, $lances[0]->getValor());
+        self::assertEquals(1500, $lances[1]->getValor());
+        self::assertEquals(1000, $lances[2]->getValor());
     }
 
     public function testAvaliadorDeveRetornarOsMaioresLancesDisponiveis()
@@ -68,10 +68,10 @@ class AvaliadorTest extends TestCase
 
         $this->avaliador->avalia($leilao);
 
-        static::assertCount(2, $this->avaliador->getTresMaioresLances());
+        self::assertCount(2, $this->avaliador->getTresMaioresLances());
     }
 
-    public function leilaoComLancesEmOrdemCrescente()
+    public function leilaoComLancesEmOrdemCrescente(): array
     {
         $leilao = new Leilao('Fiat 147 0KM');
         $joao = new Usuario('João');
@@ -87,7 +87,7 @@ class AvaliadorTest extends TestCase
         ];
     }
 
-    public function leilaoComLancesEmOrdemDecrescente()
+    public function leilaoComLancesEmOrdemDecrescente(): array
     {
         $leilao = new Leilao('Fiat 147 0KM');
         $joao = new Usuario('João');
@@ -103,7 +103,7 @@ class AvaliadorTest extends TestCase
         ];
     }
 
-    public function leilaoComLancesEmOrdemAleatoria()
+    public function leilaoComLancesEmOrdemAleatoria(): array
     {
         $leilao = new Leilao('Fiat 147 0KM');
         $joao = new Usuario('João');

@@ -4,6 +4,7 @@ namespace Alura\Leilao\Dao;
 
 use Alura\Leilao\Infra\ConnectionCreator;
 use Alura\Leilao\Model\Leilao as ModelLeilao;
+use Exception;
 
 class Leilao
 {
@@ -26,6 +27,7 @@ class Leilao
 
     /**
      * @return ModelLeilao[]
+     * @throws Exception
      */
     public function recuperarNaoFinalizados(): array
     {
@@ -34,6 +36,7 @@ class Leilao
 
     /**
      * @return ModelLeilao[]
+     * @throws Exception
      */
     public function recuperarFinalizados(): array
     {
@@ -42,6 +45,7 @@ class Leilao
 
     /**
      * @return ModelLeilao[]
+     * @throws Exception
      */
     private function recuperarLeiloesSeFinalizado(bool $finalizado): array
     {
@@ -49,7 +53,10 @@ class Leilao
         $stm = $this->con->query($sql, \PDO::FETCH_ASSOC);
 
         $dados = $stm->fetchAll();
+
+        /** @var ModelLeilao[] $leiloes */
         $leiloes = [];
+
         foreach ($dados as $dado) {
             $leilao = new ModelLeilao($dado['descricao'], new \DateTimeImmutable($dado['dataInicio']), $dado['id']);
             if ($dado['finalizado']) {
@@ -57,7 +64,6 @@ class Leilao
             }
             $leiloes[] = $leilao;
         }
-
         return $leiloes;
     }
 

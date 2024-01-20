@@ -2,6 +2,8 @@
 
 namespace Alura\Leilao\Model;
 
+use DateTimeInterface;
+
 class Leilao
 {
     /** @var Lance[] */
@@ -10,7 +12,7 @@ class Leilao
     private $descricao;
     /** @var bool */
     private $finalizado;
-    /** @var \DateTimeInterface  */
+    /** @var DateTimeInterface  */
     private $dataInicio;
     /** @var int */
     private $id;
@@ -63,7 +65,7 @@ class Leilao
         return $this->finalizado;
     }
 
-    public function recuperarDataInicio(): \DateTimeInterface
+    public function recuperarDataInicio(): DateTimeInterface
     {
         return $this->dataInicio;
     }
