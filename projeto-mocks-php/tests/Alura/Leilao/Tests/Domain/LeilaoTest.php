@@ -4,6 +4,7 @@ namespace Alura\Leilao\Tests\Domain;
 
 use Alura\Leilao\Model\Lance;
 use Alura\Leilao\Model\Leilao;
+use Alura\Leilao\Dao\Leilao as LeilaoDao;
 use Alura\Leilao\Model\Usuario;
 use DateTimeImmutable;
 use DomainException;
@@ -65,7 +66,7 @@ class LeilaoTest extends TestCase
     public function testAtualizaLeilao()
     {
         $leilao = new Leilao('Brinquedo', new DateTimeImmutable('today'), 1);
-        $leilaoDao = new \Alura\Leilao\Dao\Leilao();
+        $leilaoDao = new LeilaoDao();
 
         $leilaoDao->salva($leilao);
         $leilao->finaliza();
