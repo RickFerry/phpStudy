@@ -1,19 +1,231 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb2ce51b-9d1c-42b5-8402-74ca500b2b60" name="Changes" comment="" />
+    <list default="true" id="bb2ce51b-9d1c-42b5-8402-74ca500b2b60" name="Changes" comment="adjust" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerConfigs">
+    <option name="configs">
+      <option value="$PROJECT_DIR$/phpunit-projeto-inicial/composer.json" />
+      <option value="$PROJECT_DIR$/series-manager/composer.json" />
+      <option value="$PROJECT_DIR$/projeto-mocks-php/composer.json" />
+      <option value="$PROJECT_DIR$/books_api/composer.json" />
+      <option value="$PROJECT_DIR$/series_manager/composer.json" />
+    </option>
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/doctrine/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\Program Files\php-8.3.0\php.exe" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\Program Files\php-8.3.0\php.exe">
+    <include_path>
+      <path value="$PROJECT_DIR$/phpunit-projeto-inicial/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/composer" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/carbonphp/carbon-doctrine-types" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/spatie/backtrace" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/spatie/flare-client-php" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/spatie/ignition" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/spatie/laravel-ignition" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/fruitcake/php-cors" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/guzzlehttp/uri-template" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/dflydev/dot-access-data" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/uid" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/symfony/polyfill-uuid" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/nunomaduro/termwind" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/nette/utils" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/nette/schema" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/laravel/sail" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/laravel/prompts" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/laravel/serializable-closure" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/laravel/pint" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/league/config" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/league/flysystem-local" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/series-manager/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/composer" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/projeto-mocks-php/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/books_api/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/books_api/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/books_api/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/books_api/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/books_api/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/books_api/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/books_api/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/books_api/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/books_api/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/books_api/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/books_api/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/books_api/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/books_api/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/books_api/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/books_api/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/books_api/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/books_api/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/serializer" />
+      <path value="$PROJECT_DIR$/books_api/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/books_api/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/books_api/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/books_api/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/books_api/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/runtime" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/books_api/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/books_api/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/books_api/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/books_api/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/books_api/vendor/composer" />
+      <path value="$PROJECT_DIR$/series_manager/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/series_manager/vendor/symfony/string" />
+    </include_path>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -22,15 +234,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Ricardo/Documents/projects/phpStudy",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="projeto-mocks-php" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/projeto-mocks-php/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
@@ -48,7 +262,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-ba97393d7c68-74080bdb84d3-com.jetbrains.php.sharedIndexes-PS-233.11799.297" />
+        <option value="bundled-php-predefined-ba97393d7c68-b4dcf6bb9de9-com.jetbrains.php.sharedIndexes-PS-233.13135.108" />
       </set>
     </attachedChunks>
   </component>
@@ -61,10 +275,24 @@
       <option name="presentableId" value="Default" />
       <updated>1702591846387</updated>
       <workItem from="1702591847498" duration="23000" />
+      <workItem from="1705417859930" duration="304000" />
     </task>
+    <task id="LOCAL-00001" summary="adjust">
+      <option name="closed" value="true" />
+      <created>1705418143150</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1705418143150</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="adjust" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjust" />
   </component>
 </project>

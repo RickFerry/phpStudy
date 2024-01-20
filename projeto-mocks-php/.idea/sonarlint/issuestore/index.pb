@@ -1,10 +1,4 @@
 
-P
- tests/Service/EncerradorTest.php,8\5\853d10a928ed170410aa603dc38d843b40c584bc
-K
-tests/Domain/LeilaoTest.php,3\3\3310e6d53d048d7258d6a0ba294947bf244ee7d5
-O
-tests/Service/AvaliadorTest.php,5\b\5b2aa8076ce0e3a6a7619fe2aae39aba5c6ce4ce
 B
 src/Dao/Leilao.php,0\0\005f566c6f239cab6013bd233dd77a48a7f97598
 O
