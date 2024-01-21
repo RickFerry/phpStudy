@@ -10,16 +10,30 @@ class Leilao
 {
     private $con;
 
-    public function __construct()
+    public function __construct(\PDO $con = null)
     {
-        $this->con = ConnectionCreator::getConnection();
+        $this->con = $con;
+    }
+
+    public static function inFile(): Leilao
+    {
+        $instance = new self();
+        $instance->con = ConnectionCreator::getConnectionFile();
+        return $instance;
+    }
+
+    public static function inMemory(): Leilao
+    {
+        $instance = new self();
+        $instance->con = ConnectionCreator::getConnectionMemory();
+        return $instance;
     }
 
     public function salva(ModelLeilao $leilao): void
     {
         $sql = 'INSERT INTO leiloes (descricao, finalizado, dataInicio) VALUES (?, ?, ?)';
         $stm = $this->con->prepare($sql);
-        $stm->bindValue(1, $leilao->recuperarDescricao(), \PDO::PARAM_STR);
+        $stm->bindValue(1, $leilao->recuperarDescricao());
         $stm->bindValue(2, $leilao->estaFinalizado(), \PDO::PARAM_BOOL);
         $stm->bindValue(3, $leilao->recuperarDataInicio()->format('Y-m-d'));
         $stm->execute();

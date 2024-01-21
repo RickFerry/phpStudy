@@ -8,10 +8,19 @@ use Alura\Leilao\Dao\Leilao as LeilaoDao;
 use Alura\Leilao\Model\Usuario;
 use DateTimeImmutable;
 use DomainException;
+use Exception;
 use PHPUnit\Framework\TestCase;
 
 class LeilaoTest extends TestCase
 {
+    private $leilaoDao;
+
+    protected function setUp(): void
+    {
+        //$this->leilaoDao = LeilaoDao::inFile();
+        $this->leilaoDao = LeilaoDao::inMemory();
+    }
+
     public function testProporLanceEmLeilaoFinalizadoDeveLancarExcecao()
     {
         self::expectException(DomainException::class);
@@ -50,6 +59,22 @@ class LeilaoTest extends TestCase
         $leilao->recebeLance(new Lance($usuario, 1100));
     }
 
+    /**
+     * @throws Exception
+     */
+    public function testAtualizaLeilao()
+    {
+        $leilao = new Leilao('Brinquedo', new DateTimeImmutable('today'), 1);
+
+        $this->leilaoDao->salva($leilao);
+        $leilao->finaliza();
+        $this->leilaoDao->atualiza($leilao);
+        $savedLeilao = $this->leilaoDao->recuperarFinalizados()[0];
+
+        $this->assertSame('Brinquedo', $savedLeilao->recuperarDescricao());
+        $this->assertTrue($savedLeilao->estaFinalizado());
+    }
+
     public function dadosParaProporLances(): array
     {
         $usuario1 = new Usuario('Usuário 1');
@@ -58,22 +83,5 @@ class LeilaoTest extends TestCase
             [1, [new Lance($usuario1, 1000)]],
             [2, [new Lance($usuario1, 1000), new Lance($usuario2, 2000)]],
         ];
-    }
-
-    /**
-     * @throws \Exception
-     */
-    public function testAtualizaLeilao()
-    {
-        $leilao = new Leilao('Brinquedo', new DateTimeImmutable('today'), 1);
-        $leilaoDao = new LeilaoDao();
-
-        $leilaoDao->salva($leilao);
-        $leilao->finaliza();
-        $leilaoDao->atualiza($leilao);
-        $savedLeilao = $leilaoDao->recuperarFinalizados()[0];
-
-        $this->assertSame('Brinquedo', $savedLeilao->recuperarDescricao());
-        $this->assertTrue($savedLeilao->estaFinalizado());
     }
 }

@@ -25,3 +25,7 @@ S
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 ;
 testdox.txt,5\6\563a95b64ef76d2fb137df91b522e267a3200098
+I
+src/Service/Avaliador.php,8\c\8ca03fbef593ae8d66011c84686905da378ce616
+J
+src/Service/Encerrador.php,f\f\ff290712b8da303567c2bc8da01e6cdc2d28512d
