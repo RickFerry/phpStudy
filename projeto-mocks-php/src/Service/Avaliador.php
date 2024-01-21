@@ -8,13 +8,13 @@ use Alura\Leilao\Model\Leilao;
 class Avaliador
 {
     /** @var float */
-    private $menorValor = INF;
+    private float $menorValor = INF;
     /** @var float */
-    private $maiorValor = 0;
+    private int|float $maiorValor = 0;
     /** @var Lance[]|array */
-    private $maiores;
+    private array $maiores;
 
-    public function avalia(Leilao $leilao)
+    public function avalia(Leilao $leilao): void
     {
         $leilao->finaliza();
 
@@ -53,7 +53,7 @@ class Avaliador
      * @param Leilao $leilao
      * @return Lance[]|array
      */
-    private function avaliaTresMaioresLances(Leilao $leilao)
+    private function avaliaTresMaioresLances(Leilao $leilao): array
     {
         $lances = $leilao->getLances();
         usort($lances, function (Lance $lance1, Lance $lance2) {

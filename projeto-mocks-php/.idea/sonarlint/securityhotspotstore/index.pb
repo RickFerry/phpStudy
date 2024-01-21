@@ -29,3 +29,11 @@ I
 src/Service/Avaliador.php,8\c\8ca03fbef593ae8d66011c84686905da378ce616
 J
 src/Service/Encerrador.php,f\f\ff290712b8da303567c2bc8da01e6cdc2d28512d
+;
+phpunit.xml,3\5\357499abc6fdfbad45ccc062a427f5f62fb2e3cd
+K
+.phpunit.cache/test-results,a\c\acba688af2aef3a5ee1d6c642b08b21e0adf6b7f
+?
+phpunit.xml.bak,0\b\0b80efef34c848c09c999e9f3501f1d7c115c208
+=
+composer.lock,c\3\c3262e2a0879195bd6a727e90f768bc85ad79ffd

@@ -6,16 +6,11 @@ use DateTimeInterface;
 
 class Leilao
 {
-    /** @var Lance[] */
-    private $lances;
-    /** @var string */
-    private $descricao;
-    /** @var bool */
-    private $finalizado;
-    /** @var DateTimeInterface  */
-    private $dataInicio;
-    /** @var int */
-    private $id;
+    private array $lances;
+    private string $descricao;
+    private bool $finalizado;
+    private DateTimeInterface|\DateTimeImmutable $dataInicio;
+    private ?int $id;
 
     public function __construct(string $descricao, \DateTimeImmutable $dataInicio = null, int $id = null)
     {
@@ -37,13 +32,10 @@ class Leilao
             throw new \DomainException('Este leilão já está finalizado');
         }
 
-        $ultimoLance = empty($this->lances)
-            ? null
-            : $this->lances[count($this->lances) - 1];
-        if (!empty($this->lances) && $ultimoLance->getUsuario() == $lance->getUsuario()) {
+        $ultimoLance = empty($this->lances) ? null : $this->lances[array_key_last($this->lances)];
+        if (!empty($this->lances) && $ultimoLance->getUsuario() === $lance->getUsuario()) {
             throw new \DomainException('Usuário já deu o último lance');
         }
-
         $this->lances[] = $lance;
     }
 

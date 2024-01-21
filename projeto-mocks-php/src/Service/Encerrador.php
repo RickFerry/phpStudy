@@ -3,11 +3,12 @@
 namespace Alura\Leilao\Service;
 
 use Alura\Leilao\Dao\Leilao as LeilaoDao;
+use Exception;
 
 class Encerrador
 {
-    private $dao;
-    private $email;
+    private LeilaoDao $dao;
+    private EnviadorEmail $email;
 
     public function __construct(leilaoDao $dao, EnviadorEmail $email)
     {
@@ -15,7 +16,10 @@ class Encerrador
         $this->email = $email;
     }
 
-    public function encerra()
+    /**
+     * @throws Exception
+     */
+    public function encerra(): void
     {
         $leiloes = $this->dao->recuperarNaoFinalizados();
 

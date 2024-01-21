@@ -8,7 +8,7 @@ use Exception;
 
 class Leilao
 {
-    private $con;
+    private ?\PDO $con;
 
     public function __construct(\PDO $con = null)
     {

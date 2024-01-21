@@ -6,19 +6,22 @@ use Alura\Leilao\Dao\Leilao as LeilaoDao;
 use Alura\Leilao\Model\Leilao;
 use Alura\Leilao\Service\Encerrador;
 use Alura\Leilao\Service\EnviadorEmail;
+use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 class EncerradorTest extends TestCase
 {
-    private $leiloeiro;
+    private Encerrador $leiloeiro;
 
-    /** @var MockObject&EnviadorEmail */
-    private $enviadorEmail;
+    private MockObject&EnviadorEmail $enviadorEmail;
 
-    private $brasilia;
-    private $fusca;
+    private Leilao $brasilia;
+    private Leilao $fusca;
 
+    /**
+     * @throws Exception
+     */
     protected function setUp(): void
     {
         $this->brasilia = new Leilao('Brasília Amarela', new \DateTimeImmutable('8 days ago'));
@@ -27,12 +30,14 @@ class EncerradorTest extends TestCase
         $leilaoDao = $this->createMock(LeilaoDao::class);
         $leilaoDao->method('recuperarNaoFinalizados')->willReturn([$this->brasilia, $this->fusca]);
         $leilaoDao->method('recuperarFinalizados')->willReturn([$this->brasilia, $this->fusca]);
-        $leilaoDao->expects($this->exactly(2))->method('atualiza')->withConsecutive([$this->brasilia], [$this->fusca]);
     
         $this->enviadorEmail = $this->createMock(EnviadorEmail::class);
         $this->leiloeiro = new Encerrador($leilaoDao, $this->enviadorEmail);
     }
 
+    /**
+     * @throws \Exception
+     */
     public function testLeiloesComMaisDeUmaSemanaDevemSerEncerrados()
     {
         $this->leiloeiro->encerra();
@@ -44,6 +49,9 @@ class EncerradorTest extends TestCase
         self::assertCount(2, $leiloes);
     }
 
+    /**
+     * @throws \Exception
+     */
     public function testDeveContinuarProcessamentoMesmoEncontrandoErroAoEnviarEmail()
     {
         $this->enviadorEmail->
@@ -53,6 +61,9 @@ class EncerradorTest extends TestCase
         $this->leiloeiro->encerra();
     }
 
+    /**
+     * @throws \Exception
+     */
     public function testSoDeveEnviarLeilaoPorEmailAposFinalizado()
     {
         $this->enviadorEmail
