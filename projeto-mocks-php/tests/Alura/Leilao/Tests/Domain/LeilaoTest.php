@@ -66,13 +66,20 @@ class LeilaoTest extends TestCase
     {
         $leilao = new Leilao('Brinquedo', new DateTimeImmutable('today'), 1);
 
-        $this->leilaoDao->salva($leilao);
-        $leilao->finaliza();
-        $this->leilaoDao->atualiza($leilao);
-        $savedLeilao = $this->leilaoDao->recuperarFinalizados()[0];
+        self::createMock(LeilaoDao::class)
+            ->method('salva')
+            ->with($leilao);
 
-        $this->assertSame('Brinquedo', $savedLeilao->recuperarDescricao());
-        $this->assertTrue($savedLeilao->estaFinalizado());
+        $leilao->finaliza();
+
+        $leilao->setDescricao('Bola');
+
+        self::createMock(LeilaoDao::class)
+            ->method('atualiza')
+            ->with($leilao);
+
+        self::assertSame('Bola', $leilao->recuperarDescricao());
+        self::assertTrue($leilao->estaFinalizado());
     }
 
     public function dadosParaProporLances(): array

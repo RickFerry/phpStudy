@@ -26,6 +26,11 @@ class Leilao
         $this->id = $id;
     }
 
+    public function setDescricao(string $descricao): void
+    {
+        $this->descricao = $descricao;
+    }
+
     public function recebeLance(Lance $lance)
     {
         if ($this->finalizado) {
