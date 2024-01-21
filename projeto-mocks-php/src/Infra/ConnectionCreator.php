@@ -16,16 +16,11 @@ class ConnectionCreator
         return self::$pdo;
     }
 
-    public static function getConnectionMemory(): \PDO
+    public static function getConnectionMemory(string $sql): \PDO
     {
         if (is_null(self::$pdo)) {
             self::$pdo = new \PDO('sqlite::memory:');
-            self::$pdo->exec('create table leiloes (
-            id INTEGER primary key,
-            descricao TEXT,
-            finalizado BOOL,
-            dataInicio TEXT
-                     );');
+            self::$pdo->exec($sql);
             self::$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         }
         return self::$pdo;

@@ -25,7 +25,13 @@ class Leilao
     public static function inMemory(): Leilao
     {
         $instance = new self();
-        $instance->con = ConnectionCreator::getConnectionMemory();
+        $sql = 'CREATE TABLE IF NOT EXISTS leiloes (
+                    id INTEGER PRIMARY KEY,
+                    descricao TEXT,
+                    finalizado BOOL,
+                    dataInicio TEXT
+                );';
+        $instance->con = ConnectionCreator::getConnectionMemory($sql);
         return $instance;
     }
 
