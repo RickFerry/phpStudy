@@ -60,7 +60,7 @@ class LeilaoTest extends TestCase
     }
 
     /**
-     * @throws Exception
+     * @throws Exception|\PHPUnit\Framework\MockObject\Exception
      */
     public function testAtualizaLeilao()
     {
@@ -82,7 +82,7 @@ class LeilaoTest extends TestCase
         self::assertTrue($leilao->estaFinalizado());
     }
 
-    public function dadosParaProporLances(): array
+    public static function dadosParaProporLances(): array
     {
         $usuario1 = new Usuario('Usuário 1');
         $usuario2 = new Usuario('Usuário 2');

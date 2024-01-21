@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 class AvaliadorTest extends TestCase
 {
     /** @var Avaliador */
-    private $avaliador;
+    private Avaliador $avaliador;
 
     protected function setUp(): void
     {
@@ -71,7 +71,7 @@ class AvaliadorTest extends TestCase
         self::assertCount(2, $this->avaliador->getTresMaioresLances());
     }
 
-    public function leilaoComLancesEmOrdemCrescente(): array
+    public static function leilaoComLancesEmOrdemCrescente(): array
     {
         $leilao = new Leilao('Fiat 147 0KM');
         $joao = new Usuario('João');
@@ -87,7 +87,7 @@ class AvaliadorTest extends TestCase
         ];
     }
 
-    public function leilaoComLancesEmOrdemDecrescente(): array
+    public static function leilaoComLancesEmOrdemDecrescente(): array
     {
         $leilao = new Leilao('Fiat 147 0KM');
         $joao = new Usuario('João');
@@ -103,7 +103,7 @@ class AvaliadorTest extends TestCase
         ];
     }
 
-    public function leilaoComLancesEmOrdemAleatoria(): array
+    public static function leilaoComLancesEmOrdemAleatoria(): array
     {
         $leilao = new Leilao('Fiat 147 0KM');
         $joao = new Usuario('João');

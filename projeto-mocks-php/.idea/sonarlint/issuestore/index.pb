@@ -37,3 +37,5 @@ K
 phpunit.xml.bak,0\b\0b80efef34c848c09c999e9f3501f1d7c115c208
 =
 composer.lock,c\3\c3262e2a0879195bd6a727e90f768bc85ad79ffd
+<
+testdox.html,7\4\7448e102aef6e0dd85042106870d8e4213b5a2c1
