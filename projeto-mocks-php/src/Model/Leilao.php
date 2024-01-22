@@ -26,7 +26,7 @@ class Leilao
         $this->descricao = $descricao;
     }
 
-    public function recebeLance(Lance $lance)
+    public function recebeLance(Lance $lance): void
     {
         if ($this->finalizado) {
             throw new \DomainException('Este leilão já está finalizado');
@@ -39,7 +39,7 @@ class Leilao
         $this->lances[] = $lance;
     }
 
-    public function finaliza()
+    public function finaliza(): void
     {
         $this->finalizado = true;
     }
