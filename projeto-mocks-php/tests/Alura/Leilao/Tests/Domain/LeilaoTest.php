@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 
 class LeilaoTest extends TestCase
 {
-    private $leilaoDao;
+    private LeilaoDao $leilaoDao;
 
     protected function setUp(): void
     {

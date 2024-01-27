@@ -13,9 +13,7 @@ use PHPUnit\Framework\TestCase;
 class EncerradorTest extends TestCase
 {
     private Encerrador $leiloeiro;
-
     private MockObject&EnviadorEmail $enviadorEmail;
-
     private Leilao $brasilia;
     private Leilao $fusca;
 
