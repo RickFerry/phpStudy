@@ -13,13 +13,13 @@ use PHPUnit\Framework\TestCase;
 
 class LeilaoTest extends TestCase
 {
-    private LeilaoDao $leilaoDao;
-
-    protected function setUp(): void
-    {
-        //$this->leilaoDao = LeilaoDao::inFile();
-        $this->leilaoDao = LeilaoDao::inMemory();
-    }
+//    private $leilaoDao;
+//
+//    protected function setUp(): void
+//    {
+//        //$this->leilaoDao = LeilaoDao::inFile();
+//        $this->leilaoDao = LeilaoDao::inMemory();
+//    }
 
     public function testProporLanceEmLeilaoFinalizadoDeveLancarExcecao()
     {
@@ -64,7 +64,7 @@ class LeilaoTest extends TestCase
      */
     public function testAtualizaLeilao()
     {
-        $leilao = new Leilao('Brinquedo', new DateTimeImmutable('today'), 1);
+        $leilao = new Leilao('Brinquedo', new DateTimeImmutable('today'));
 
         self::createMock(LeilaoDao::class)
             ->method('salva')
@@ -79,6 +79,27 @@ class LeilaoTest extends TestCase
             ->with($leilao);
 
         self::assertSame('Bola', $leilao->recuperarDescricao());
+        self::assertTrue($leilao->estaFinalizado());
+    }
+
+    /**
+     * @throws \PHPUnit\Framework\MockObject\Exception
+     */
+    public function testLeilaoComDataValida(): void
+    {
+        $leilao = new Leilao('Item 1', new \DateTimeImmutable('today'));
+        $leilao->finaliza();
+
+        self::createMock(LeilaoDao::class)
+            ->method('salva')
+            ->with($leilao);
+
+        self::createMock(LeilaoDao::class)
+            ->method('recuperarFinalizados')
+            ->willReturn([$leilao]);
+
+        self::assertSame('Item 1', $leilao->recuperarDescricao());
+        self::assertEquals('2024-01-22', $leilao->recuperarDataInicio()->format('Y-m-d'));
         self::assertTrue($leilao->estaFinalizado());
     }
 

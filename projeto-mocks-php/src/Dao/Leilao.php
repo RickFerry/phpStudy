@@ -87,9 +87,12 @@ class Leilao
         return $leiloes;
     }
 
-    public function atualiza(ModelLeilao $leilao)
+    public function atualiza(ModelLeilao $leilao): void
     {
-        $sql = 'UPDATE leiloes SET descricao = :descricao, dataInicio = :dataInicio, finalizado = :finalizado WHERE id = :id';
+        $sql =
+            'UPDATE leiloes
+             SET descricao = :descricao, dataInicio = :dataInicio, finalizado = :finalizado
+             WHERE id = :id';
         $stm = $this->con->prepare($sql);
         $stm->bindValue(':descricao', $leilao->recuperarDescricao());
         $stm->bindValue(':dataInicio', $leilao->recuperarDataInicio()->format('Y-m-d'));

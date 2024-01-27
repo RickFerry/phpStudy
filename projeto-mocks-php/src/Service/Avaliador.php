@@ -7,11 +7,8 @@ use Alura\Leilao\Model\Leilao;
 
 class Avaliador
 {
-    /** @var float */
     private float $menorValor = INF;
-    /** @var float */
     private int|float $maiorValor = 0;
-    /** @var Lance[]|array */
     private array $maiores;
 
     public function avalia(Leilao $leilao): void
