@@ -7,6 +7,7 @@ use App\Http\Requests\SeriesFormRequest;
 use App\Models\Series;
 use App\Repositories\SeriesRepository;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class SeriesController extends Controller
 {
@@ -17,9 +18,13 @@ class SeriesController extends Controller
         $this->repository = $repository;
     }
 
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
-        return response()->json(Series::all());
+        return $request->has('nome')
+            ? response()->json(
+                Series::query()->where('nome', 'like', "%{$request->nome}%")->paginate()
+            )
+            : response()->json(Series::query()->paginate());
     }
 
     public function store(SeriesFormRequest $request): JsonResponse

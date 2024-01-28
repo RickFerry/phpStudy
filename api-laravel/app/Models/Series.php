@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -13,6 +14,7 @@ class Series extends Model
     use HasFactory;
 
     protected $fillable = ['nome', 'cover'];
+    protected $appends = ['links'];
 
     public function seasons(): HasMany
     {
@@ -29,5 +31,25 @@ class Series extends Model
         self::addGlobalScope('ordered', function (Builder $queryBuilder) {
             $queryBuilder->orderBy('nome');
         });
+    }
+
+    public function links(): Attribute
+    {
+        return new Attribute(
+            get: fn () => [
+                [
+                    'rel' => 'self',
+                    'href' => "/api/series/{$this->id}",
+                ],
+                [
+                    'rel' => 'episodes',
+                    'href' => "/api/series/{$this->id}/seasons",
+                ],
+                [
+                    'rel' => 'seasons',
+                    'href' => "/api/series/{$this->id}/episodes",
+                ],
+            ]
+        );
     }
 }
