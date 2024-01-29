@@ -1,3 +1,6 @@
+api-laravel/vendor/
+api-laravel/node_modules/
+
 projeto-mocks-php/vendor/
 series_manager/vendor/
 series-manager/vendor/
