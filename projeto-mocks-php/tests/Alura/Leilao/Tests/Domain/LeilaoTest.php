@@ -87,7 +87,7 @@ class LeilaoTest extends TestCase
      */
     public function testLeilaoComDataValida(): void
     {
-        $leilao = new Leilao('Item 1', new \DateTimeImmutable('today'));
+        $leilao = new Leilao('Item 1', new DateTimeImmutable('today'));
         $leilao->finaliza();
 
         self::createMock(LeilaoDao::class)
