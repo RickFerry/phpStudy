@@ -6,16 +6,20 @@ use App\Http\Requests\SeriesFormRequest;
 use App\Jobs\DeleteSeriesCover;
 use App\Models\Series;
 use App\Repositories\SeriesRepository;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class SeriesController extends Controller
 {
-    public function __construct(private SeriesRepository $repository)
+    public function __construct(private readonly SeriesRepository $repository)
     {
         $this->middleware('auth')->except('index');
     }
 
-    public function index(Request $request)
+    public function index(Request $request): Factory|View|Application
     {
         $series = Series::all();
         $mensagemSucesso = session('mensagem.sucesso');
@@ -24,12 +28,12 @@ class SeriesController extends Controller
             ->with('mensagemSucesso', $mensagemSucesso);
     }
 
-    public function create()
+    public function create(): Factory|View|Application
     {
         return view('series.create');
     }
 
-    public function store(SeriesFormRequest $request)
+    public function store(SeriesFormRequest $request): RedirectResponse
     {
         $coverPath = $request->file('cover')?->store('series_cover', 'public');
         $request->coverPath = $coverPath;
@@ -45,7 +49,7 @@ class SeriesController extends Controller
             ->with('mensagem.sucesso', "Série '{$serie->nome}' adicionada com sucesso");
     }
 
-    public function destroy(Series $series)
+    public function destroy(Series $series): RedirectResponse
     {
         $series->delete();
         DeleteSeriesCover::dispatch($series->cover);
@@ -54,12 +58,12 @@ class SeriesController extends Controller
             ->with('mensagem.sucesso', "Série '{$series->nome}' removida com sucesso");
     }
 
-    public function edit(Series $series)
+    public function edit(Series $series): Factory|View|Application
     {
         return view('series.edit')->with('serie', $series);
     }
 
-    public function update(Series $series, SeriesFormRequest $request)
+    public function update(Series $series, SeriesFormRequest $request): RedirectResponse
     {
         $series->fill($request->all());
         $series->save();

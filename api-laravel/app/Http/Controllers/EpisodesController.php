@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Episode;
 use App\Models\Season;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class EpisodesController
 {
-    public function index(Season $season)
+    public function index(Season $season): Factory|View|Application
     {
         return view('episodes.index', [
             'episodes' => $season->episodes,
