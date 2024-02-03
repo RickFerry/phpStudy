@@ -24,10 +24,10 @@ class EmailUsersAboutSeriesCreated implements ShouldQueue
     /**
      * Handle the event.
      *
-     * @param  object  $event
+     * @param SeriesCreatedEvent $event
      * @return void
      */
-    public function handle(SeriesCreatedEvent $event)
+    public function handle(SeriesCreatedEvent $event): void
     {
         $userList = User::all();
         foreach ($userList as $index => $user) {

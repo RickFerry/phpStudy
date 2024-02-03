@@ -16,7 +16,7 @@ class DeleteSeriesCover implements ShouldQueue
     public function __construct(private readonly string $seriesCoverPath)
     { }
 
-    public function handle()
+    public function handle(): void
     {
         Storage::disk('public')->delete($this->seriesCoverPath);
     }
