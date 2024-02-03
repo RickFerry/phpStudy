@@ -1,0 +1,23 @@
+{
+  "name": "rickferry/course-search-engine",
+  "description": "Project course search engine",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Ricardo",
+      "email": "rick_ferry1@hotmail.com"
+    }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "^7.9.x-dev",
+    "symfony/dom-crawler": "^7.1.x-dev",
+    "symfony/css-selector": "^7.1.x-dev",
+    "php": "^8.1"
+  },
+    "autoload": {
+        "psr-4": {
+        "Ferry\\CourseSearchEngine\\": "src/"
+        }
+    }
+}
