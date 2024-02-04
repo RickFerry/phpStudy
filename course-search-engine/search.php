@@ -10,9 +10,9 @@ use Symfony\Component\DomCrawler\Crawler;
 $client = new Client(['base_uri' => 'https://www.alura.com.br/cursos-online-programacao/php', 'verify' => false]);
 try {
     $search = new Search($client, new Crawler());
-    $cursos = $search->search('/cursos-online-programacao/php');
-    foreach ($cursos as $curso) {
-        echo $curso;
+    $courses = $search->search('/cursos-online-programacao/php');
+    foreach ($courses as $course) {
+        echo $course;
     }
 } catch (GuzzleException $e) {
     echo $e->getMessage();
