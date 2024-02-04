@@ -22,7 +22,7 @@ class Search
      */
     public function search(string $url): array
     {
-        $response = $this->client->get($url);
+        $response = $this->client->request('GET', $url);
         $html = $response->getBody();
         $this->crawler = new Crawler($html);
         return $this->crawler->filter('span.card-curso__nome')->each(function (Crawler $node) {
