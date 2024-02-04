@@ -24,5 +24,23 @@
     "phpunit/phpunit": "^10.5-dev",
     "squizlabs/php_codesniffer": "^4.0.x-dev",
     "phan/phan": "^5.4.3"
+  },
+    "scripts": {
+        "test": "phpunit tests",
+        "cs-check": "phpcs --standard=PSR12 src",
+        "cs-fix": "phpcbf --standard=PSR12 src",
+        "phan": "phan --allow-polyfill-parser",
+      "all-check": [
+        "@cs-check",
+        "@phan",
+        "@test",
+        "@cs-fix"
+      ],
+        "post-update-cmd": [
+            "@test"
+        ]
+    },
+  "scripts-descriptions": {
+    "all-check": "Run all checks"
   }
 }
